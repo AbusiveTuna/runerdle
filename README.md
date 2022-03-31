@@ -4,20 +4,19 @@ OSRS Wordle
 Main:
 Common OSRS words, torva, runes, blood, etc.
 
-Ironman:
-Main + More obsecure items and NPCs: 
+Ironman: Easy + Medium
 
-Hardcore Ironman:
+Ultimate Ironman: Easy + Medium + Hard
 
-Ultimate Ironman:
+Hardcore Ironman: Hard mode
 
 Classification: 
 
-Normal Words: Toxic, Blood, Leech, Zanik, chins, 
+Easy: Common OSRS words: Ex: Jagex,Craft,Lunar
+Medium: Common OSRS words plus part of OSRS words: Ex: Sword, (lunar) Isles, (ape) atoll 
+Hard: All the above plus OSRS slang and less known items/npcs: Gmaul, Pjing, Uwogo
 
-Slang: brews, irons, imbtw, dhing, cammy, cwars
-
-Obsecure NPCs and Items: prims, tbows 
+General Dictonary: Allow non-solution based words as input. 
 
 easy (super osrs specific):
 
@@ -135,16 +134,12 @@ POSSIBLE MEDIUM OR GENERAL WORDS
 ['giant', 'https://oldschool.runescape.wiki/w/giant'],
 ['drive', 'https://oldschool.runescape.wiki/w/drive'],
 ['minds', 'https://oldschool.runescape.wiki/w/minds'],
-['cabin', 'https://oldschool.runescape.wiki/w/cabin'],
-['fever', 'https://oldschool.runescape.wiki/w/fever'],
+['cabin', 'https://oldschool.runescape.wiki/w/Cabin_Fever'],
+['fever', 'https://oldschool.runescape.wiki/w/Cabin_Fever'],
 ['peril', 'https://oldschool.runescape.wiki/w/peril'],
 ['tears', 'https://oldschool.runescape.wiki/w/tears'],
-['flesh', 'https://oldschool.runescape.wiki/w/flesh'],
-['eater', 'https://oldschool.runescape.wiki/w/eater'],
 ['souls', 'https://oldschool.runescape.wiki/w/souls'],
-['eagle', 'https://oldschool.runescape.wiki/w/eagle'],
 ['isles', 'https://oldschool.runescape.wiki/w/isles'],
-['olafs', 'https://oldschool.runescape.wiki/w/olafs'],
 ['dream', 'https://oldschool.runescape.wiki/w/dream'],
 ['tales', 'https://oldschool.runescape.wiki/w/tales'],
 ['kings', 'https://oldschool.runescape.wiki/w/kings'],
@@ -153,7 +148,6 @@ POSSIBLE MEDIUM OR GENERAL WORDS
 ['empty', 'https://oldschool.runescape.wiki/w/empty'],
 ['daddy', 'https://oldschool.runescape.wiki/w/daddy'],
 ['green', 'https://oldschool.runescape.wiki/w/green'],
-['drags', 'https://oldschool.runescape.wiki/w/drags'],
 ['crazy', 'https://oldschool.runescape.wiki/w/crazy'],
 ['prime', 'https://oldschool.runescape.wiki/w/prime'],
 ['brine', 'https://oldschool.runescape.wiki/w/brine'],
