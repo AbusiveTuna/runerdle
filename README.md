@@ -1,3 +1,5 @@
+discord: WKCPrqrdZC 
+Nez for BA
 # runerdle
 OSRS Wordle
 
