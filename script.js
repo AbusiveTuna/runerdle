@@ -1,10 +1,11 @@
+import { GUESSES } from "./guesses.js";
 import { WORDS } from "./words.js";
 
 const NUMBER_OF_GUESSES = 6;
 let guessesRemaining = NUMBER_OF_GUESSES;
 let currentGuess = [];
 let nextLetter = 0;
-let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)]
+let rightGuessString = GUESSES[Math.floor(Math.random() * GUESSES.length)]
 console.log(rightGuessString)
 
 function initBoard() {
@@ -89,7 +90,7 @@ function checkGuess () {
         return
     }
 
-    if (!WORDS.includes(guessString)) {
+    if (!GUESSES.includes(guessString) && !WORDS.includes(guessString)) {
         toastr.error("Word not in list!")
         return
     }
