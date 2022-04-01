@@ -227,12 +227,15 @@ document.getElementById("keyboard-cont").addEventListener("click", (e) => {
 })
 
 $('#hardModeButton').click(function() {
+    console.log("Hard mode was:");
     console.log(hardMode);
     if(this.checked){
         hardMode = true;
     } else {
         hardMode = false;
     }
+    console.log("Hard mode is now:");
+    console.log(hardMode);
 });
 
 $('#dictionaryButton').click(function() {
