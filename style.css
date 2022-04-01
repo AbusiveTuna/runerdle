@@ -59,7 +59,7 @@ body { background: #333; color: white; }
  /* The switch - the box around the slider */
  .switch {
   position: relative;
-  display: inline-block;
+  display: block;
   width: 60px;
   height: 34px;
 }
