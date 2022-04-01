@@ -1,14 +1,35 @@
-import { GUESSES } from "./guesses.js";
-import { WORDS } from "./words.js";
+import { GUESSES } from "./WordLists/guesses.js";
+import { WORDS } from "./WordLists/dictionary.js";
+import { HARDWORDS } from "./WordLists/hardWords.js";
 
 const NUMBER_OF_GUESSES = 6;
+let hardMode = false;
+let allWords = false;
 let guessesRemaining = NUMBER_OF_GUESSES;
 let currentGuess = [];
 let nextLetter = 0;
-let rightGuessString = GUESSES[Math.floor(Math.random() * GUESSES.length)]
-console.log(rightGuessString)
+let rightGuessString = "";
+let rightGuessWiki = "";
+let rand = 0;
+
+function getWord(){
+    if(hardMode){
+        rand = Math.floor(Math.random() * HARDWORDS.length);
+        rightGuessString = HARDWORDS[rand][0];
+        rightGuessWiki = HARDWORDS[rand][1];
+    }
+    else{
+        rand = Math.floor(Math.random() * GUESSES.length);
+        rightGuessString = GUESSES[rand][0];
+        rightGuessWiki = GUESSES[rand][1];
+    }
+    console.log("The correct word is: ", rightGuessString);
+    console.log("Where is this in OSRS? ", rightGuessWiki);
+}
 
 function initBoard() {
+    getWord();
+    
     let board = document.getElementById("game-board");
 
     for (let i = 0; i < NUMBER_OF_GUESSES; i++) {
@@ -68,33 +89,55 @@ function insertLetter (pressedKey) {
 }
 
 function deleteLetter () {
-    let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining]
-    let box = row.children[nextLetter - 1]
-    box.textContent = ""
-    box.classList.remove("filled-box")
-    currentGuess.pop()
-    nextLetter -= 1
+    let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining];
+    let box = row.children[nextLetter - 1];
+    box.textContent = "";
+    box.classList.remove("filled-box");
+    currentGuess.pop();
+    nextLetter -= 1;
 }
 
 function checkGuess () {
     let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining]
-    let guessString = ''
-    let rightGuess = Array.from(rightGuessString)
+    let guessString = '';
+    let rightGuess = Array.from(rightGuessString);
 
     for (const val of currentGuess) {
-        guessString += val
+        guessString += val;
     }
 
     if (guessString.length != 5) {
-        toastr.error("Not enough letters!")
-        return
+        toastr.error("Not enough letters!");
+        return;
     }
 
-    if (!GUESSES.includes(guessString) && !WORDS.includes(guessString)) {
-        toastr.error("Word not in list!")
-        return
+    if(allWords){ //Dictionary is on
+        if(hardMode){ //Hard mode is also on
+            if (!GUESSES.includes(guessString) && !WORDS.includes(guessString) && 
+                !HARDWORDS.includes(guessString)) {
+                toastr.error("Word not in list!");
+                return;
+            }
+        }
+        //Dictionary on only
+        if (!GUESSES.includes(guessString) && !WORDS.includes(guessString)) {
+            toastr.error("Word not in list!");
+            return;
+        }
+    }   
+    //hardmode on only
+    if(hardMode){
+        if (!GUESSES.includes(guessString) && !HARDWORDS.includes(guessString)) {
+            toastr.error("Word not in list!");
+            return;
+        }
     }
 
+    //nothing is on
+    if(!GUESSES.includes(guessString)){
+        toastr.error("Word not in list!");
+        return;
+    }
     
     for (let i = 0; i < 5; i++) {
         let letterColor = ''
