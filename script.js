@@ -159,7 +159,7 @@ function checkGuess () {
                 letterColor = 'green'
             } else {
                 // shade box yellow
-                letterColor = '#ffff00'
+                letterColor = '#d9b502'
             }
 
             rightGuess[letterPosition] = "#"
@@ -199,7 +199,7 @@ function shadeKeyBoard(letter, color) {
                 return
             } 
 
-            if (oldColor === '#ffff00' && color !== 'green') {
+            if (oldColor === '#d9b502' && color !== 'green') {
                 return
             }
 
@@ -230,17 +230,14 @@ $('#hardModeButton').click(function() {
     } else {
         hardMode = false;
     }
-        console.log(hardMode);
 });
 
 $('#dictionaryButton').click(function() {
-    console.log(allWords);
     if(this.checked){
-        hardMode = true;
+        allWords = true;
     } else {
-        hardMode = false;
+        allWords = false;
     }
-    console.log(allWords);
 });
 
 const animateCSS = (element, animation, prefix = 'animate__') =>
