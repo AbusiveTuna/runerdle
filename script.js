@@ -233,6 +233,7 @@ $('#hardModeButton').click(function() {
 });
 
 $('#dictionaryButton').click(function() {
+    console.log(allWords);
     if(this.checked){
         allWords = true;
     } else {
