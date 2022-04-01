@@ -96,13 +96,13 @@ function insertLetter (pressedKey) {
     }
     pressedKey = pressedKey.toLowerCase();
 
-    let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining]
-    let box = row.children[nextLetter]
-    animateCSS(box, "pulse")
-    box.textContent = pressedKey
-    box.classList.add("filled-box")
-    currentGuess.push(pressedKey)
-    nextLetter += 1
+    let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining];
+    let box = row.children[nextLetter];
+    animateCSS(box, "pulse");
+    box.textContent = pressedKey;
+    box.classList.add("filled-box");
+    currentGuess.push(pressedKey);
+    nextLetter += 1;
 }
 
 function deleteLetter () {
@@ -225,12 +225,16 @@ document.getElementById("keyboard-cont").addEventListener("click", (e) => {
 })
 
 $('#hardModeButton').click(function() {
-    hardMode = !hardMode;
+    if(this.checked)
+    hardMode = true;
+
     console.log(hardMode);
 });
 
 $('#dictionaryButton').click(function() {
-    allWords = !allWords;
+    if(this.checked)
+    allWords = true;
+
     console.log(allWords);
 });
 

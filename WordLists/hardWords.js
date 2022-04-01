@@ -4,6 +4,7 @@ export const HARDWORDS = [
     // ['armor', 'https://oldschool.runescape.wiki/w/armor'],
     // ['quest', 'https://oldschool.runescape.wiki/w/quest'],
     // ['gnome', 'https://oldschool.runescape.wiki/w/gnome'],
+    // ['runes', 'https://oldschool.runescape.wiki/w/runes'],
     // ['arrav', 'https://oldschool.runescape.wiki/w/arrav'],
     // ['doric', 'https://oldschool.runescape.wiki/w/doric'],
     // ['shilo', 'https://oldschool.runescape.wiki/w/shilo'],
