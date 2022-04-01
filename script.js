@@ -83,7 +83,7 @@ document.addEventListener("keyup", (e) => {
 
     if (pressedKey === "F5" && nextLetter !== 0) {
         deleteLetter();
-        console.log("why");
+        console.log("whyyy");
         return;
     }
 
