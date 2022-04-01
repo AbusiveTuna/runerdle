@@ -67,31 +67,34 @@ initBoard()
 document.addEventListener("keyup", (e) => {
 
     if (guessesRemaining === 0) {
-        return
+        return;
     }
 
     let pressedKey = String(e.key)
+    console.log(pressedKey);
     if (pressedKey === "Backspace" && nextLetter !== 0) {
-        deleteLetter()
-        return
+        deleteLetter();
+        return;
     }
 
     if (pressedKey === "Enter") {
-        checkGuess()
-        return
+        checkGuess();
+        return;
     }
 
     let found = pressedKey.match(/[a-z]/gi)
     if (!found || found.length > 1) {
-        return
+        console.log(found.length);
+        return;
     } else {
-        insertLetter(pressedKey)
+        console.log(pressedKey);
+        insertLetter(pressedKey);
     }
 })
 
 function insertLetter (pressedKey) {
     if (nextLetter === 5) {
-        return
+        return;
     }
     pressedKey = pressedKey.toLowerCase()
 
@@ -219,9 +222,6 @@ document.getElementById("keyboard-cont").addEventListener("click", (e) => {
     if (key === "Del") {
         key = "Backspace"
     } 
-
-    console.log(target);
-    console.log(key);
 
     document.dispatchEvent(new KeyboardEvent("keyup", {'key': key}))
 })
