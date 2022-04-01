@@ -5,6 +5,8 @@ import { HARDWORDS } from "./WordLists/hardWords.js";
 const NUMBER_OF_GUESSES = 6;
 let hardMode = document.getElementById('hardModeButton').checked;
 let allWords = document.getElementById('dictionaryButton').checked;
+console.log(hardMode);
+console.log(allWords);
 let guessesRemaining = NUMBER_OF_GUESSES;
 let currentGuess = [];
 let nextLetter = 0;
@@ -225,6 +227,7 @@ document.getElementById("keyboard-cont").addEventListener("click", (e) => {
 })
 
 $('#hardModeButton').click(function() {
+    console.log(hardMode);
     if(this.checked){
         hardMode = true;
     } else {
