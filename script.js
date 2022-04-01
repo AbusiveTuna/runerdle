@@ -96,7 +96,7 @@ document.addEventListener("keyup", (e) => {
     if (!found || found.length > 1) {
         return;
     } else {
-        if(pressedKey = "F5"){
+        if(pressedKey === "F5"){
             console.log("why");
         }
         else{
