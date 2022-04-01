@@ -135,12 +135,12 @@ function checkGuess () {
             toastr.error("Word not in list!");
             return;
         }
-    }   
-    
-    if(!justWords.includes(guessString)){ //nothing is on
-        console.log("No modes are on");
-        toastr.error("Word not in list!");
-        return;
+    } else{   
+        if(!justWords.includes(guessString)){ //nothing is on
+            console.log("No modes are on");
+            toastr.error("Word not in list!");
+            return;
+        }
     }
     
     for (let i = 0; i < 5; i++) {
