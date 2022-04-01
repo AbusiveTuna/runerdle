@@ -11,20 +11,36 @@ let nextLetter = 0;
 let rightGuessString = "";
 let rightGuessWiki = "";
 let rand = 0;
+let justWords;
 
 function getWord(){
+
     if(hardMode){
         rand = Math.floor(Math.random() * HARDWORDS.length);
         rightGuessString = HARDWORDS[rand][0];
         rightGuessWiki = HARDWORDS[rand][1];
+        justWords = toOneD(HARDWORDS);
     }
     else{
         rand = Math.floor(Math.random() * GUESSES.length);
         rightGuessString = GUESSES[rand][0];
         rightGuessWiki = GUESSES[rand][1];
+        justWords = toOneD(GUESSES);
     }
     console.log("The correct word is: ", rightGuessString);
     console.log("Where is this in OSRS? ", rightGuessWiki);
+    console.log(justWords);
+}
+
+//Removes the wiki links from the array
+function toOneD(twoD){
+    let oneD = new Array(twoD.length);
+
+    for(let i = 0; i < twoD.length; i++){
+        oneD[i] = twoD[i][0];
+    }
+
+    return oneD;
 }
 
 function initBoard() {
@@ -112,28 +128,13 @@ function checkGuess () {
     }
 
     if(allWords){ //Dictionary is on
-        if(hardMode){ //Hard mode is also on
-            if (!HARDWORDS.includes(guessString) && !WORDS.includes(guessString)) {
-                toastr.error("Word not in list!");
-                return;
-            }
-        }
-        //Dictionary on only
-        if (!GUESSES.includes(guessString) && !WORDS.includes(guessString)) {
+        if (!justWords.includes(guessString) && !WORDS.includes(guessString)) {
             toastr.error("Word not in list!");
             return;
         }
     }   
-    //hardmode on only
-    if(hardMode){
-        if (!HARDWORDS.includes(guessString)) {
-            toastr.error("Word not in list!");
-            return;
-        }
-    }
-
-    //nothing is on
-    if(!GUESSES.includes(guessString,rightGuessWiki)){
+    
+    if(!justWords.includes(guessString)){ //nothing is on
         console.log("No modes are on");
         toastr.error("Word not in list!");
         return;
