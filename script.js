@@ -3,8 +3,8 @@ import { WORDS } from "./WordLists/dictionary.js";
 import { HARDWORDS } from "./WordLists/hardWords.js";
 
 const NUMBER_OF_GUESSES = 6;
-let hardMode = false;
-let allWords = false;
+let hardMode = document.getElementById('hardModeButton').checked;
+let allWords = document.getElementById('dictionaryButton').checked;
 let guessesRemaining = NUMBER_OF_GUESSES;
 let currentGuess = [];
 let nextLetter = 0;
@@ -225,16 +225,21 @@ document.getElementById("keyboard-cont").addEventListener("click", (e) => {
 })
 
 $('#hardModeButton').click(function() {
-    if(this.checked)
-    hardMode = true;
-
-    console.log(hardMode);
+    if(this.checked){
+        hardMode = true;
+    } else {
+        hardMode = false;
+    }
+        console.log(hardMode);
 });
 
 $('#dictionaryButton').click(function() {
-    if(this.checked)
-    allWords = true;
-
+    console.log(allWords);
+    if(this.checked){
+        hardMode = true;
+    } else {
+        hardMode = false;
+    }
     console.log(allWords);
 });
 
