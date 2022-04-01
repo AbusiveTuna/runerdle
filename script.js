@@ -71,9 +71,19 @@ document.addEventListener("keyup", (e) => {
     }
 
     let pressedKey = String(e.key)
-    console.log(pressedKey);
     if (pressedKey === "Backspace" && nextLetter !== 0) {
         deleteLetter();
+        return;
+    }
+
+    if (pressedKey === "Backspace" && nextLetter !== 0) {
+        deleteLetter();
+        return;
+    }
+
+    if (pressedKey === "F5" && nextLetter !== 0) {
+        deleteLetter();
+        console.log("why");
         return;
     }
 
@@ -84,11 +94,14 @@ document.addEventListener("keyup", (e) => {
 
     let found = pressedKey.match(/[a-z]/gi)
     if (!found || found.length > 1) {
-        console.log(found.length);
         return;
     } else {
-        console.log(pressedKey);
+        if(pressedKey = "F5"){
+            console.log("why");
+        }
+        else{
         insertLetter(pressedKey);
+        }
     }
 })
 
