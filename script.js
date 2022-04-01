@@ -220,6 +220,9 @@ document.getElementById("keyboard-cont").addEventListener("click", (e) => {
         key = "Backspace"
     } 
 
+    console.log(target);
+    console.log(key);
+
     document.dispatchEvent(new KeyboardEvent("keyup", {'key': key}))
 })
 
