@@ -27,9 +27,7 @@ function getWord(){
         rightGuessWiki = GUESSES[rand][1];
         justWords = toOneD(GUESSES);
     }
-    console.log("The correct word is: ", rightGuessString);
-    console.log("Where is this in OSRS? ", rightGuessWiki);
-    console.log(justWords);
+    console.log(rightGuessString);
 }
 
 //Removes the wiki links from the array
@@ -62,7 +60,7 @@ function initBoard() {
     }
 }
 
-initBoard()
+initBoard();
 
 document.addEventListener("keyup", (e) => {
 
@@ -81,23 +79,18 @@ document.addEventListener("keyup", (e) => {
         return;
     }
 
-    if (pressedKey === "F5" && nextLetter !== 0) {
-        deleteLetter();
-        console.log("whyyy");
-        return;
-    }
-
     if (pressedKey === "Enter") {
         checkGuess();
         return;
     }
 
-    let found = pressedKey.match(/[a-z]/gi)
+    let found = pressedKey.match(/[a-z]/gi);
+
     if (!found || found.length > 1) {
         return;
     } else {
         if(pressedKey === "F5"){
-            console.log("why");
+            //dont know why it gets here but it does sometimes.
         }
         else{
         insertLetter(pressedKey);
@@ -109,7 +102,7 @@ function insertLetter (pressedKey) {
     if (nextLetter === 5) {
         return;
     }
-    pressedKey = pressedKey.toLowerCase()
+    pressedKey = pressedKey.toLowerCase();
 
     let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining]
     let box = row.children[nextLetter]
@@ -238,6 +231,16 @@ document.getElementById("keyboard-cont").addEventListener("click", (e) => {
 
     document.dispatchEvent(new KeyboardEvent("keyup", {'key': key}))
 })
+
+$('#hardModeButton').click(function() {
+    hardMode = !hardMode;
+    console.log(hardMode);
+});
+
+$('#dictionaryButton').click(function() {
+    allWords = !allWords;
+    console.log(allWords);
+});
 
 const animateCSS = (element, animation, prefix = 'animate__') =>
   // We create a Promise and return it
