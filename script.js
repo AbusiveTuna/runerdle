@@ -83,19 +83,11 @@ document.addEventListener("keyup", (e) => {
         checkGuess();
         return;
     }
-
-    let found = pressedKey.match(/[a-z]/gi);
-
-    if (!found || found.length > 1) {
-        return;
-    } else {
-        if(pressedKey === "F5"){
-            //dont know why it gets here but it does sometimes.
-        }
-        else{
+    
+    if (event.keyCode >= 65 && event.keyCode <= 90){
         insertLetter(pressedKey);
-        }
     }
+
 })
 
 function insertLetter (pressedKey) {

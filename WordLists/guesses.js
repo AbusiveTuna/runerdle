@@ -1,6 +1,7 @@
 export const GUESSES = [
     ['jagex', 'https://oldschool.runescape.wiki/w/jagex'],
     ['magic', 'https://oldschool.runescape.wiki/w/magic'],
+    ['armor', 'https://oldschool.runescape.wiki/w/armor'],
     ['quest', 'https://oldschool.runescape.wiki/w/quest'],
     ['gnome', 'https://oldschool.runescape.wiki/w/gnome'],
     ['arrav', 'https://oldschool.runescape.wiki/w/arrav'],
