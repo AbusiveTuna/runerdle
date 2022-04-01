@@ -113,8 +113,7 @@ function checkGuess () {
 
     if(allWords){ //Dictionary is on
         if(hardMode){ //Hard mode is also on
-            if (!GUESSES.includes(guessString) && !WORDS.includes(guessString) && 
-                !HARDWORDS.includes(guessString)) {
+            if (!HARDWORDS.includes(guessString) && !WORDS.includes(guessString)) {
                 toastr.error("Word not in list!");
                 return;
             }
@@ -127,14 +126,15 @@ function checkGuess () {
     }   
     //hardmode on only
     if(hardMode){
-        if (!GUESSES.includes(guessString) && !HARDWORDS.includes(guessString)) {
+        if (!HARDWORDS.includes(guessString)) {
             toastr.error("Word not in list!");
             return;
         }
     }
 
     //nothing is on
-    if(!GUESSES.includes(guessString)){
+    if(!GUESSES.includes(guessString,rightGuessWiki)){
+        console.log("No modes are on");
         toastr.error("Word not in list!");
         return;
     }
