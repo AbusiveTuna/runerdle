@@ -247,6 +247,16 @@ $('#dictionaryButton').click(function() {
     }
 });
 
+/* Open */
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+  }
+  
+  /* Close */
+function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+  } 
+
 const animateCSS = (element, animation, prefix = 'animate__') =>
   // We create a Promise and return it
   new Promise((resolve, reject) => {
