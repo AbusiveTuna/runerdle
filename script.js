@@ -245,9 +245,11 @@ $('#dictionaryButton').click(function() {
 });
 
 $('#settings').click(function() {
-    var test = $('#myNav').style.height.getValue();
+
+    $('#myNav').css('height', '100%');
+
+    var test = $('#myNav').attr('style').getValue();
     console.log(test);
-    $('#myNav').style.height = "100%";
 });
 
 
