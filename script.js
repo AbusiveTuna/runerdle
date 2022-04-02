@@ -227,15 +227,12 @@ document.getElementById("keyboard-cont").addEventListener("click", (e) => {
 })
 
 $('#hardModeButton').click(function() {
-    console.log("Hard mode was:");
-    console.log(hardMode);
     if(this.checked){
         hardMode = true;
     } else {
         hardMode = false;
     }
-    console.log("Hard mode is now:");
-    console.log(hardMode);
+
 });
 
 $('#dictionaryButton').click(function() {
@@ -247,15 +244,21 @@ $('#dictionaryButton').click(function() {
     }
 });
 
-/* Open */
-function openNav() {
-    document.getElementById("myNav").style.height = "100%";
-  }
+$('#settings').click(function() {
+    var test = $('#myNav').style.height.getValue();
+    console.log(test);
+    $('#myNav').style.height = "100%";
+});
+
+
+// function openNav() {
+//     document.getElementById("myNav")
+// }
   
-  /* Close */
-function closeNav() {
-    document.getElementById("myNav").style.height = "0%";
-  } 
+//   /* Close */
+// function closeNav() {
+//     document.getElementById("myNav").style.height = "0%";
+// } 
 
 const animateCSS = (element, animation, prefix = 'animate__') =>
   // We create a Promise and return it
