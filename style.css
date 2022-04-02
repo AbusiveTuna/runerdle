@@ -118,7 +118,3 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 } 
-
-#myMenu{position:fixed;top:20px;right:-80px;width:80px;height:300px;background:palegreen;}
-.submenu{width:100%;height:20px;padding:20px 5px;border:1px solid green;}
-#menuTrigger:hover{cursor:pointer;}

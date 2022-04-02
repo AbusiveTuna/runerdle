@@ -247,29 +247,6 @@ $('#dictionaryButton').click(function() {
     }
 });
 
-$('#settingsButton').click(function() {
-
-});
-
-let mnuOut=false;
-
-$('#menuTrigger').click(function(){
-  if (mnuOut){
-        //Menu is visible, so HIDE menu
-      $('#myMenu').animate({
-        right: '-80px'
-      },800);
-      mnuOut = false;
-  }else{
-        //Menu is hidden, so SHOW menu
-      $('#myMenu').animate({
-        right: 0
-      },800);
-      mnuOut = true;
-  }
-})
-
-
 const animateCSS = (element, animation, prefix = 'animate__') =>
   // We create a Promise and return it
   new Promise((resolve, reject) => {
