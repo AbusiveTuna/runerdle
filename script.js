@@ -248,8 +248,6 @@ $('#settings').click(function() {
 
     $('#myNav').css('height', '100%');
 
-    var test = $('#myNav').attr('style').getValue();
-    console.log(test);
 });
 
 
