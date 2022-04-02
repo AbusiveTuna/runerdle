@@ -246,7 +246,7 @@ $('#dictionaryButton').click(function() {
 
 $('#settings').click(function() {
 
-    $('#myNav').css('height', '100%');
+    $('.myNav').css('height', '100%');
 
 });
 
