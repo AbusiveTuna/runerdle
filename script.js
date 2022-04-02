@@ -251,9 +251,9 @@ $('#settingsButton').click(function() {
 
 });
 
-$('.box').clickout(function(){
-// do something
-})
+// $('.box').clickout(function(){
+// // do something
+// })
 
 mnuOut=false;
 
