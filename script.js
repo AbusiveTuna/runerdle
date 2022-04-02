@@ -144,36 +144,36 @@ function checkGuess () {
     }
     
     for (let i = 0; i < 5; i++) {
-        let letterColor = ''
-        let box = row.children[i]
-        let letter = currentGuess[i]
+        let letterColor = '';
+        let box = row.children[i];
+        let letter = currentGuess[i];
         
-        let letterPosition = rightGuess.indexOf(currentGuess[i])
+        let letterPosition = rightGuess.indexOf(currentGuess[i]);
         // is letter in the correct guess
         if (letterPosition === -1) {
-            letterColor = 'grey'
+            letterColor = 'grey';
         } else {
             // now, letter is definitely in word
             // if letter index and right guess index are the same
             // letter is in the right position 
             if (currentGuess[i] === rightGuess[i]) {
                 // shade green 
-                letterColor = 'green'
+                letterColor = 'green';
             } else {
                 // shade box yellow
-                letterColor = '#d9b502'
+                letterColor = '#d9b502';
             }
 
-            rightGuess[letterPosition] = "#"
+            rightGuess[letterPosition] = "#";
         }
 
-        let delay = 250 * i
+        let delay = 250 * i;
         setTimeout(()=> {
             //flip box
-            animateCSS(box, 'flipInX')
+            animateCSS(box, 'flipInX');
             //shade box
-            box.style.backgroundColor = letterColor
-            shadeKeyBoard(letter, letterColor)
+            box.style.backgroundColor = letterColor;
+            shadeKeyBoard(letter, letterColor);
         }, delay)
     }
 
@@ -246,6 +246,33 @@ $('#dictionaryButton').click(function() {
         allWords = false;
     }
 });
+
+$('#settingsButton').click(function() {
+
+});
+
+$('.box').clickout(function(){
+// do something
+})
+
+mnuOut=false;
+
+$('#menuTrigger').click(function(){
+  if (mnuOut){
+        //Menu is visible, so HIDE menu
+      $('#myMenu').animate({
+        right: '-80px'
+      },800);
+      mnuOut = false;
+  }else{
+        //Menu is hidden, so SHOW menu
+      $('#myMenu').animate({
+        right: 0
+      },800);
+      mnuOut = true;
+  }
+})
+
 
 const animateCSS = (element, animation, prefix = 'animate__') =>
   // We create a Promise and return it
