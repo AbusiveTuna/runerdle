@@ -251,11 +251,7 @@ $('#settingsButton').click(function() {
 
 });
 
-// $('.box').clickout(function(){
-// // do something
-// })
-
-mnuOut=false;
+let mnuOut=false;
 
 $('#menuTrigger').click(function(){
   if (mnuOut){
