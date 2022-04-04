@@ -13,7 +13,6 @@ let rightGuessWiki = "";
 let rand = 0;
 let justWords;
 let old_html = $("#keyboard-cont").html();
-$('#playAgainButton').hide();
 
 function getWord(){
 
@@ -55,6 +54,7 @@ function toOneD(twoD){
 }
 
 function initBoard() {
+	$('#playAgainButton').hide();
     getWord();
     
 
