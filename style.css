@@ -130,9 +130,10 @@ body { background: #333; color: white; }
 /* The settings modal */
 
 .btn-primary {
-  position:flex;
-  top:0;
-  right:0;
+ padding: 10px;
+ position: absolute;
+ top: 10px;
+ right: 10px;
 }
 
 .setting {
