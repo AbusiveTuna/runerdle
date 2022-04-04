@@ -56,8 +56,37 @@ h1 {
 
 body { background: #333; color: white; }
 
-.modal { 
-   background-color: red !important; 
+.modal .modal-header {
+  padding: 23px 26px;
+  border-bottom: 1px solid transparent;
+}
+
+.modal .modal-content {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.31);
+  border-radius: 3px;
+  border: 0;
+}
+
+.modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid transparent;
+}
+
+.modal .modal-footer .btn-link {
+  font-size: 14px;
+  color: #000;
+  font-weight: 500;
+}
+
+.btn-link {
+  color: #797979;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.modal[data-modal-color="green"] .modal-content {
+  background: #4caf50;
 }
 
  /* The switch - the box around the slider */
