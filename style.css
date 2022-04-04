@@ -80,6 +80,10 @@ body { background: #333; color: white; }
   font-weight: 500;
 }
 
+.close {
+ color: #FF0000;
+}
+
 .btn-link {
   color: #797979;
   text-decoration: none;
