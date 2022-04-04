@@ -70,11 +70,14 @@ body { background: #333; color: white; }
 }
 
 .modal .modal-header {
-  font-size: 36px;
   padding: 23px 26px;
   border-bottom: 1px solid transparent;
   text-align: center;
   font-size: 80px;
+}
+
+.modal .modal-title {
+   font-size: 36px;
 }
 
 .modal .modal-content {
