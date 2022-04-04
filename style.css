@@ -8,6 +8,11 @@ h1 {
   flex-direction: column;
 }
 
+html
+{
+    font-size: 100%;
+}
+
 .letter-box {
   border: 2px solid gray;
   border-radius: 3px;
