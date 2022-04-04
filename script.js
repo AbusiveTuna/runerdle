@@ -29,7 +29,7 @@ function getWord(){
         justWords = toOneD(GUESSES);
     }
 	console.log(rightGuessWiki);
-	$("#wiki-link").attr("href",rightGuessWiki);
+	$("#wiki-link a").attr("href",rightGuessWiki);
     console.log(rightGuessString);
 }
 
