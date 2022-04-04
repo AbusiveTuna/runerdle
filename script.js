@@ -13,6 +13,7 @@ let rightGuessWiki = "";
 let rand = 0;
 let justWords;
 let old_html = $("#keyboard-cont").html();
+let old_html2 = $("#game-board").html();
 
 function getWord(){
 
@@ -36,7 +37,7 @@ function reset(){
 	currentGuess = [];
 	nextLetter = 0;
 	console.log(old_html); //apperently is nothing
-	$("#game-board").html();
+	$("#game-board").html(null);
 	$("#keyboard-cont").html(old_html);
 	initBoard();
 }
