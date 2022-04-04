@@ -145,7 +145,7 @@ body { background: #333; color: white; }
   position: relative;
   display: block;
   height: 20px;
-  width: 34px;
+  width: 60px;
 }
 
 /* Hide default HTML checkbox */
@@ -196,7 +196,7 @@ input:checked + .slider:before {
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+  border-radius: 20px;
 }
 
 .slider.round:before {
