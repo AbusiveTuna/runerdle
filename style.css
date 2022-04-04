@@ -181,11 +181,11 @@ body { background: #333; color: white; }
 }
 
 input:checked + .slider {
-  background-color: #green;
+  background-color: green;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #green;
+  box-shadow: 0 0 1px green;
 }
 
 input:checked + .slider:before {
