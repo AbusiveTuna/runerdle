@@ -5,8 +5,6 @@ import { HARDWORDS } from "./WordLists/hardWords.js";
 const NUMBER_OF_GUESSES = 6;
 let hardMode = document.getElementById('hardModeButton').checked;
 let allWords = document.getElementById('dictionaryButton').checked;
-console.log(hardMode);
-console.log(allWords);
 let guessesRemaining = NUMBER_OF_GUESSES;
 let currentGuess = [];
 let nextLetter = 0;
@@ -178,9 +176,9 @@ function checkGuess () {
     }
 
     if (guessString === rightGuessString) {
-        toastr.success("You guessed right! Game over!")
-        guessesRemaining = 0
-        return
+        $('#endScreenModal').modal('show');
+        guessesRemaining = 0;
+        return;
     } else {
         guessesRemaining -= 1;
         currentGuess = [];
@@ -249,16 +247,6 @@ $('#settings').click(function() {
     $('.myNav').css('height', '100%');
 
 });
-
-
-// function openNav() {
-//     document.getElementById("myNav")
-// }
-  
-//   /* Close */
-// function closeNav() {
-//     document.getElementById("myNav").style.height = "0%";
-// } 
 
 const animateCSS = (element, animation, prefix = 'animate__') =>
   // We create a Promise and return it
