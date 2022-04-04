@@ -12,6 +12,7 @@ let rightGuessString = "";
 let rightGuessWiki = "";
 let rand = 0;
 let justWords;
+let old_html = $("#game-board").html();
 
 function getWord(){
 
@@ -30,6 +31,15 @@ function getWord(){
     console.log(rightGuessString);
 }
 
+function reset(){
+	guessesRemaining = NUMBER_OF_GUESSES;
+	currentGuess = [];
+	nextLetter = 0;
+	console.log(old_html);
+	$("#game-board").html(old_html);
+	initBoard();
+}
+
 //Removes the wiki links from the array
 function toOneD(twoD){
     let oneD = new Array(twoD.length);
@@ -44,6 +54,7 @@ function toOneD(twoD){
 function initBoard() {
     getWord();
     
+
     let board = document.getElementById("game-board");
 
     for (let i = 0; i < NUMBER_OF_GUESSES; i++) {
@@ -244,7 +255,7 @@ $('#dictionaryButton').click(function() {
 $('#newWordButton').click(function() {
 	console.log("ITS WORKING");
     $('#endScreenModal').modal('hide');
-    initBoard();
+	reset();
 });
 
 const animateCSS = (element, animation, prefix = 'animate__') =>
