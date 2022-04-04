@@ -132,6 +132,10 @@ body { background: #333; color: white; }
  color: #FF0000;
 }
 
+.wiki-link {
+	font-size: 48px;
+}
+
 /* The settings modal */
 
 .btn-primary {
