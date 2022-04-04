@@ -56,9 +56,10 @@ h1 {
 
 body { background: #333; color: white; }
 
-.modal-backdrop {
-   background-color: #333;
+.modal { 
+   background-color: red !important; 
 }
+
  /* The switch - the box around the slider */
  .switch {
   position: relative;
