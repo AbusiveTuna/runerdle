@@ -234,7 +234,6 @@ $('#hardModeButton').click(function() {
 });
 
 $('#dictionaryButton').click(function() {
-    console.log(allWords);
     if(this.checked){
         allWords = true;
     } else {
@@ -242,10 +241,9 @@ $('#dictionaryButton').click(function() {
     }
 });
 
-$('#settings').click(function() {
-
-    $('.myNav').css('height', '100%');
-
+$('#newWordButton').click(function() {
+    $('#endScreenModal').modal('hide');
+    getWord();
 });
 
 const animateCSS = (element, animation, prefix = 'animate__') =>
