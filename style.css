@@ -109,7 +109,8 @@ body { background: #333; color: white; }
 }
 
 .btn-link {
-  color: #797979;
+ /* color: #797979; */
+  color: #ded7d7;
   text-decoration: none;
   border-radius: 2px;
 }
