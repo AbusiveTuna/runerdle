@@ -132,6 +132,7 @@ body { background: #333; color: white; }
 
 .text {
     padding-right: 8px;
+    font-size: 36px;
 }
 
 .description {
@@ -143,8 +144,8 @@ body { background: #333; color: white; }
  .switch {
   position: relative;
   display: block;
-  width: 60px;
-  height: 34px;
+  height: 13px;
+  width: 13px;
 }
 
 /* Hide default HTML checkbox */
@@ -162,7 +163,7 @@ body { background: #333; color: white; }
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #green;
+  background-color: green;
   -webkit-transition: .4s;
   transition: .4s;
 }
