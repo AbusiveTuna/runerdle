@@ -57,6 +57,7 @@ html
   margin: 0 2px;
   cursor: pointer;
   text-transform: uppercase;
+  background: #0000;
 }
 
 body { background: #333; color: white; }
