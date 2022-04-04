@@ -242,8 +242,9 @@ $('#dictionaryButton').click(function() {
 });
 
 $('#newWordButton').click(function() {
+	console.log("ITS WORKING");
     $('#endScreenModal').modal('hide');
-    getWord();
+    initBoard();
 });
 
 const animateCSS = (element, animation, prefix = 'animate__') =>
