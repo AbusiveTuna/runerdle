@@ -56,6 +56,13 @@ h1 {
 
 body { background: #333; color: white; }
 
+
+ /* The settings modal */
+
+.modal {
+  color: #fff;
+}
+
 .modal .modal-header {
   padding: 23px 26px;
   border-bottom: 1px solid transparent;
@@ -74,20 +81,41 @@ body { background: #333; color: white; }
   border-top: 1px solid transparent;
 }
 
+.modal .modal-footer {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.modal .modal-footer .btn-link {
+  font-weight: 400;
+}
+
+.modal .modal-title, .modal .modal-footer .btn-link {
+  color: #fff;
+}
+
 .modal .modal-footer .btn-link {
   font-size: 14px;
   color: #000;
   font-weight: 500;
 }
 
-.close {
- color: #FF0000;
-}
-
 .btn-link {
   color: #797979;
   text-decoration: none;
   border-radius: 2px;
+}
+
+.modal .modal-footer .btn-link:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  text-decoration:none;
+}
+
+.modal .modal-footer .btn-link {
+  font-weight: 400;
+}
+
+.close {
+ color: #FF0000;
 }
 
  /* The switch - the box around the slider */
