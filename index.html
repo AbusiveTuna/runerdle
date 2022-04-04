@@ -23,14 +23,23 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Settings</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            ...
-          </div>
+           <h4> Hard Mode? </h4>
+            <label class="switch">
+                <input type="checkbox" name="hardModeButton" id="hardModeButton">
+                <span class="slider round"></span>
+             </label>
+             <h4> Use Dictionary? </h4>
+             <label class="switch">
+                <input type="checkbox" id="dictionaryButton">
+                <span class="slider round"></span>
+             </label>
+           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Save changes</button>
@@ -79,17 +88,6 @@
             <button class="keyboard-button">Enter</button>
         </div>
     </div>
-
-    <h4> Hard Mode? </h4>
-    <label class="switch">
-        <input type="checkbox" name="hardModeButton" id="hardModeButton">
-        <span class="slider round"></span>
-    </label>
-    <h4> Use Dictionary? </h4>
-    <label class="switch">
-        <input type="checkbox" id="dictionaryButton">
-        <span class="slider round"></span>
-    </label>
     
 <script
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
