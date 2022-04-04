@@ -15,23 +15,32 @@
 <body>
     <h1> Old School Runescape Wordle </h1>
     
-    <div id="myNav" class="overlay">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Launch demo modal
+    </button>
 
-        <!-- Button to close the overlay navigation -->
-        <a href="javascript:void(0)" class="closebtn">&times;</a>
-      
-        <!-- Overlay content -->
-        <div class="overlay-content">
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Clients</a>
-          <a href="#">Contact</a>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
         </div>
-      
+      </div>
     </div>
     
-    <span style="font-size:30px;cursor:pointer" id="settings">&#9776; opennn</span>
-
     <div id="game-board">
 
     </div>
