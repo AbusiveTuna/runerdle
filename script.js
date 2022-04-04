@@ -189,8 +189,8 @@ function checkGuess () {
     }
 
     if (guessString === rightGuessString) {
-        $('#endScreenModal').modal('show');
 		$('#settingsModal').modal('hide');
+        $('#endScreenModal').modal('show');
         guessesRemaining = 0;
         return;
     } else {
