@@ -198,8 +198,7 @@ function checkGuess () {
         nextLetter = 0;
 
         if (guessesRemaining === 0) {
-            toastr.error("You've run out of guesses! Game over!")
-            toastr.info(`The right word was: "${rightGuessString}"`)
+            $('#lossScreenModal').modal('show');
         }
     }
 }
@@ -256,8 +255,10 @@ $('#dictionaryButton').click(function() {
 
 $('#newWordButton').click(function() {
     $('#endScreenModal').modal('hide');
+	$('#lossScreenModal').modal('hide');
 	reset();
 });
+	
 
 const animateCSS = (element, animation, prefix = 'animate__') =>
   // We create a Promise and return it
