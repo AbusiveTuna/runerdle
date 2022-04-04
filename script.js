@@ -257,7 +257,10 @@ $('#dictionaryButton').click(function() {
 
 $('#newWordButton').click(function() {
     $('#endScreenModal').modal('hide');
-	console.log("here");
+	reset();
+});
+
+$('#tryAgainButton').click(function() {
 	$('#lossScreenModal').modal('hide');
 	reset();
 });
