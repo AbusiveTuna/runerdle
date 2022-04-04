@@ -56,6 +56,9 @@ h1 {
 
 body { background: #333; color: white; }
 
+.exampleModal{
+ background: #333; color: white;
+}
  /* The switch - the box around the slider */
  .switch {
   position: relative;
