@@ -56,8 +56,8 @@ h1 {
 
 body { background: #333; color: white; }
 
-.exampleModal{
- background: #333; color: white;
+.modal-backdrop {
+   background-color: #333;
 }
  /* The switch - the box around the slider */
  .switch {
