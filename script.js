@@ -30,6 +30,7 @@ function getWord(){
     }
 	console.log(rightGuessWiki);
 	$("#wiki-link a").attr("href",rightGuessWiki);
+	$("#wiki-link a").text(rightGuessString);
     console.log(rightGuessString);
 }
 
