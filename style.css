@@ -57,7 +57,7 @@ h1 {
 body { background: #333; color: white; }
 
 
- /* The settings modal */
+ /* The modals */
 
 .modal {
   color: #fff;
@@ -118,6 +118,25 @@ body { background: #333; color: white; }
 
 .close {
  color: #FF0000;
+}
+
+/* The settings modal */
+
+.setting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-tone-4);
+    padding: 16px 0;
+}
+
+.text {
+    padding-right: 8px;
+}
+
+.description {
+    font-size: 12px;
+    color: var(--color-tone-2);
 }
 
  /* The switch - the box around the slider */
