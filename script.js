@@ -191,6 +191,7 @@ function checkGuess () {
     if (guessString === rightGuessString) {
 		$('#settingsModal').modal('hide');
         $('#endScreenModal').modal('show');
+		$('#playAgainButton').show();
         guessesRemaining = 0;
         return;
     } else {
@@ -201,6 +202,7 @@ function checkGuess () {
         if (guessesRemaining === 0) {
 			$('#settingsModal').modal('hide');
             $('#lossScreenModal').modal('show');
+			$('#playAgainButton').show();
         }
     }
 }
@@ -262,6 +264,11 @@ $('#newWordButton').click(function() {
 
 $('#tryAgainButton').click(function() {
 	$('#lossScreenModal').modal('hide');
+	reset();
+});
+
+$('#playAgainButton').click(function() {
+	$('#playAgainButton').hide();
 	reset();
 });
 	
