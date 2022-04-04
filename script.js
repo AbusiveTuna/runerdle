@@ -13,7 +13,6 @@ let rightGuessWiki = "";
 let rand = 0;
 let justWords;
 let old_html = $("#keyboard-cont").html();
-let old_html2 = $("#game-board").html();
 
 function getWord(){
 
@@ -29,6 +28,7 @@ function getWord(){
         rightGuessWiki = GUESSES[rand][1];
         justWords = toOneD(GUESSES);
     }
+	$("#wiki-link").attr("href",rightGuessWiki);
     console.log(rightGuessString);
 }
 
@@ -36,7 +36,6 @@ function reset(){
 	guessesRemaining = NUMBER_OF_GUESSES;
 	currentGuess = [];
 	nextLetter = 0;
-	console.log(old_html); //apperently is nothing
 	$("#game-board").html(null);
 	$("#keyboard-cont").html(old_html);
 	initBoard();
@@ -255,7 +254,6 @@ $('#dictionaryButton').click(function() {
 });
 
 $('#newWordButton').click(function() {
-	console.log("ITS WORKING");
     $('#endScreenModal').modal('hide');
 	reset();
 });
