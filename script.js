@@ -28,9 +28,8 @@ function getWord(){
         rightGuessWiki = GUESSES[rand][1];
         justWords = toOneD(GUESSES);
     }
-	console.log(rightGuessWiki);
 	$("#wiki-link a").attr("href",rightGuessWiki);
-	$("#wiki-link a").text(rightGuessString);
+	$("#wiki-link a").text("Your word was: ",rightGuessString);
     console.log(rightGuessString);
 }
 
