@@ -199,8 +199,8 @@ function checkGuess () {
         nextLetter = 0;
 
         if (guessesRemaining === 0) {
-            $('#lossScreenModal').modal('show');
 			$('#settingsModal').modal('hide');
+            $('#lossScreenModal').modal('show');
         }
     }
 }
@@ -257,6 +257,7 @@ $('#dictionaryButton').click(function() {
 
 $('#newWordButton').click(function() {
     $('#endScreenModal').modal('hide');
+	console.log("here");
 	$('#lossScreenModal').modal('hide');
 	reset();
 });
