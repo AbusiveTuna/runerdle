@@ -190,6 +190,7 @@ function checkGuess () {
 
     if (guessString === rightGuessString) {
         $('#endScreenModal').modal('show');
+		$('#settingsModal').modal('hide');
         guessesRemaining = 0;
         return;
     } else {
@@ -199,6 +200,7 @@ function checkGuess () {
 
         if (guessesRemaining === 0) {
             $('#lossScreenModal').modal('show');
+			$('#settingsModal').modal('hide');
         }
     }
 }
