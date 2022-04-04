@@ -66,6 +66,8 @@ body { background: #333; color: white; }
 .modal .modal-header {
   padding: 23px 26px;
   border-bottom: 1px solid transparent;
+  text-align: center;
+  font-size: 23px;
 }
 
 .modal .modal-content {
