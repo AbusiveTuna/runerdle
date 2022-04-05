@@ -1,72 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Runerdle</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
+
 <body>
     <h1> Old School Runescape Wordle </h1>
-    
-    <input type="image" src="images/Settings.png" class="btn btn-primary" alt="settings" data-toggle="modal" data-target="#settingsModal"/>
+
+    <input type="image" src="images/Settings.png" class="btn btn-primary" alt="settings" data-toggle="modal" data-target="#settingsModal" />
 
     <!-- Settings Modal -->
     <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="settingsModalLabel">Settings</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-              <div class="setting">
-                  <div class="text">
-                      <div class="title">Hard Mode</div>
-                      <div class="description"> Adds lesser known npcs and items to the possible word list. </div>
-                  </div>
-                  <div class="control">
-                       <label class="switch">
-                       <input type="checkbox" name="hardModeButton" id="hardModeButton">
-                       <span class="slider round"></span>
-                       </label>
-                 </div>         
-              </div>
-                  <div class="setting">
-                  <div class="text">
-                      <div class="title">Use Dictionary</div>
-                      <div class="description"> Allows you to submit words not found in the osrs word list. (Ex: Radio) </div>
-                  </div>
-                  <div class="control">
-                       <label class="switch">
-                       <input type="checkbox" name="dictionaryButton" id="dictionaryButton" checked="">
-                       <span class="slider round"></span>
-                       </label>
-                  </div>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="settingsModalLabel">Settings</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-link" data-dismiss="modal">Apply Settings</button>
-          </div>
+                <div class="modal-body">
+                    <div class="setting">
+                        <div class="text">
+                            <div class="title">Hard Mode</div>
+                            <div class="description"> Adds lesser known npcs and items to the possible word list. </div>
+                        </div>
+                        <div class="control">
+                            <label class="switch">
+                                <input type="checkbox" name="hardModeButton" id="hardModeButton">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="setting">
+                        <div class="text">
+                            <div class="title">Use Dictionary</div>
+                            <div class="description"> Allows you to submit words not found in the osrs word list. (Ex: Radio) </div>
+                        </div>
+                        <div class="control">
+                            <label class="switch">
+                                <input type="checkbox" name="dictionaryButton" id="dictionaryButton" checked="">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-link" data-dismiss="modal">Apply Settings</button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    
+
     <div id="game-board">
 
     </div>
-    <!-- Keyboard Display -->   
-       <div id="keyboard-cont">
+    <!-- Keyboard Display -->
+    <div id="keyboard-cont">
         <div class="first-row">
             <button class="keyboard-button">q</button>
             <button class="keyboard-button">w</button>
@@ -102,55 +104,55 @@
             <button class="keyboard-button">Enter</button>
         </div>
     </div>
-    
-	<button type="button" class="btn btn-link" id="playAgainButton">Play Again?</button>
-	
-        <!-- Victory Modal -->
+
+    <button type="button" class="btn btn-link" id="playAgainButton">Play Again?</button>
+
+    <!-- Victory Modal -->
     <div class="modal fade" id="endScreenModal" tabindex="-1" role="dialog" aria-labelledby="endScreenModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="endScreenModalLabel">You Won!</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-                      <h3>Gratz!</h3>
-					   <div id="wiki-link"><a href="runerdle.com" target="_blank" rel="noopener noreferrer">What does this word mean? </a> </div>
-           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-link" id="newWordButton">New Word</button>
-          </div>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="endScreenModalLabel">You Won!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3>Gratz!</h3>
+                    <div id="wiki-link"><a href="runerdle.com" target="_blank" rel="noopener noreferrer">What does this word mean? </a> </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-link" id="newWordButton">New Word</button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-	
-	        <!-- Loss Modal -->
+
+    <!-- Loss Modal -->
     <div class="modal fade" id="lossScreenModal" tabindex="-1" role="dialog" aria-labelledby="lossScreenModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="lossScreenModalLabel">You Lost.</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-                      <h3>Maybe you should study up</h3>
-					   <div id="wiki-link"><a href="runerdle.com" target="_blank" rel="noopener noreferrer">What does this word mean? </a> </div>
-           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-link" id="tryAgainButton">Try Again?</button>
-          </div>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="lossScreenModalLabel">You Lost.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3>Maybe you should study up</h3>
+                    <div id="wiki-link"><a href="runerdle.com" target="_blank" rel="noopener noreferrer">What does this word mean? </a> </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-link" id="tryAgainButton">Try Again?</button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-<script src="script.js" type="module"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="script.js" type="module"></script>
 
 </body>
 
