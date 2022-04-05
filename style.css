@@ -6,6 +6,11 @@ h3 {
     text-align: center;
 }
 
+img {
+    max-width: 23px;
+    max-height: 23px;
+}
+
 #game-board {
     display: flex;
     align-items: center;
