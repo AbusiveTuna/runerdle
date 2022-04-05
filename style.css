@@ -176,6 +176,7 @@ body {
     font-size: 18px;
     color: var(--color-tone-2);
     text-align: left;
+    line-height: 0.8;
 }
 
 .description {
