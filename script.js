@@ -1,12 +1,6 @@
-import {
-    GUESSES
-} from "./WordLists/guesses.js";
-import {
-    WORDS
-} from "./WordLists/dictionary.js";
-import {
-    HARDWORDS
-} from "./WordLists/hardWords.js";
+import { GUESSES } from "./WordLists/guesses.js";
+import { WORDS } from "./WordLists/dictionary.js";
+import { HARDWORDS } from "./WordLists/hardWords.js";
 
 const NUMBER_OF_GUESSES = 6;
 let hardMode = document.getElementById('hardModeButton').checked;
