@@ -61,16 +61,16 @@ function initBoard() {
     let board = document.getElementById("game-board");
 
     for (let i = 0; i < NUMBER_OF_GUESSES; i++) {
-        let row = document.createElement("div")
-        row.className = "letter-row"
+        let row = document.createElement("div");
+        row.className = "letter-row";
         
         for (let j = 0; j < 5; j++) {
-            let box = document.createElement("div")
-            box.className = "letter-box"
-            row.appendChild(box)
+            let box = document.createElement("div");
+            box.className = "letter-box";
+            row.appendChild(box);
         }
 
-        board.appendChild(row)
+        board.appendChild(row);
     }
 }
 
@@ -129,7 +129,7 @@ function deleteLetter () {
 }
 
 function checkGuess () {
-    let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining]
+    let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining];
     let guessString = '';
     let rightGuess = Array.from(rightGuessString);
 
@@ -213,31 +213,31 @@ function checkGuess () {
 function shadeKeyBoard(letter, color) {
     for (const elem of document.getElementsByClassName("keyboard-button")) {
         if (elem.textContent === letter) {
-            let oldColor = elem.style.backgroundColor
+            let oldColor = elem.style.backgroundColor;
             if (oldColor === 'green') {
-                return
+                return;
             } 
 
             if (oldColor === '#d9b502' && color !== 'green') {
-                return
+                return;
             }
 
-            elem.style.backgroundColor = color
-            break
+            elem.style.backgroundColor = color;
+            break;
         }
     }
 }
 
 document.getElementById("keyboard-cont").addEventListener("click", (e) => {
-    const target = e.target
+    const target = e.target;
     
     if (!target.classList.contains("keyboard-button")) {
-        return
+        return;
     }
-    let key = target.textContent
+    let key = target.textContent;
 
     if (key === "Del") {
-        key = "Backspace"
+        key = "Backspace";
     } 
 
     document.dispatchEvent(new KeyboardEvent("keyup", {'key': key}))
@@ -281,7 +281,7 @@ const animateCSS = (element, animation, prefix = 'animate__') =>
   new Promise((resolve, reject) => {
     const animationName = `${prefix}${animation}`;
     // const node = document.querySelector(element);
-    const node = element
+    const node = element;
     node.style.setProperty('--animate-duration', '0.3s');
     
     node.classList.add(`${prefix}animated`, animationName);
