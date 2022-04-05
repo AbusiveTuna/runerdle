@@ -1,6 +1,12 @@
-import { GUESSES } from "./WordLists/guesses.js";
-import { WORDS } from "./WordLists/dictionary.js";
-import { HARDWORDS } from "./WordLists/hardWords.js";
+import {
+    GUESSES
+} from "./WordLists/guesses.js";
+import {
+    WORDS
+} from "./WordLists/dictionary.js";
+import {
+    HARDWORDS
+} from "./WordLists/hardWords.js";
 
 const NUMBER_OF_GUESSES = 6;
 let hardMode = document.getElementById('hardModeButton').checked;
@@ -14,39 +20,38 @@ let rand = 0;
 let justWords;
 let old_html = $("#keyboard-cont").html();
 
-function getWord(){
+function getWord() {
 
-    if(hardMode){
+    if (hardMode) {
         rand = Math.floor(Math.random() * HARDWORDS.length);
         rightGuessString = HARDWORDS[rand][0];
         rightGuessWiki = HARDWORDS[rand][1];
         justWords = toOneD(HARDWORDS);
-    }
-    else{
+    } else {
         rand = Math.floor(Math.random() * GUESSES.length);
         rightGuessString = GUESSES[rand][0];
         rightGuessWiki = GUESSES[rand][1];
         justWords = toOneD(GUESSES);
     }
-	$("#wiki-link a").attr("href",rightGuessWiki);
-	$("#wiki-link a").text("Your word was: " + rightGuessString);
+    $("#wiki-link a").attr("href", rightGuessWiki);
+    $("#wiki-link a").text("Your word was: " + rightGuessString);
     console.log(rightGuessString);
 }
 
-function reset(){
-	guessesRemaining = NUMBER_OF_GUESSES;
-	currentGuess = [];
-	nextLetter = 0;
-	$("#game-board").html(null);
-	$("#keyboard-cont").html(old_html);
-	initBoard();
+function reset() {
+    guessesRemaining = NUMBER_OF_GUESSES;
+    currentGuess = [];
+    nextLetter = 0;
+    $("#game-board").html(null);
+    $("#keyboard-cont").html(old_html);
+    initBoard();
 }
 
 //Removes the wiki links from the array
-function toOneD(twoD){
+function toOneD(twoD) {
     let oneD = new Array(twoD.length);
 
-    for(let i = 0; i < twoD.length; i++){
+    for (let i = 0; i < twoD.length; i++) {
         oneD[i] = twoD[i][0];
     }
 
@@ -54,16 +59,16 @@ function toOneD(twoD){
 }
 
 function initBoard() {
-	$('#playAgainButton').hide();
+    $('#playAgainButton').hide();
     getWord();
-    
+
 
     let board = document.getElementById("game-board");
 
     for (let i = 0; i < NUMBER_OF_GUESSES; i++) {
         let row = document.createElement("div");
         row.className = "letter-row";
-        
+
         for (let j = 0; j < 5; j++) {
             let box = document.createElement("div");
             box.className = "letter-box";
@@ -97,14 +102,14 @@ document.addEventListener("keyup", (e) => {
         checkGuess();
         return;
     }
-    
-    if (event.keyCode >= 65 && event.keyCode <= 90){
+
+    if (event.keyCode >= 65 && event.keyCode <= 90) {
         insertLetter(pressedKey);
     }
 
 })
 
-function insertLetter (pressedKey) {
+function insertLetter(pressedKey) {
     if (nextLetter === 5) {
         return;
     }
@@ -119,7 +124,7 @@ function insertLetter (pressedKey) {
     nextLetter += 1;
 }
 
-function deleteLetter () {
+function deleteLetter() {
     let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining];
     let box = row.children[nextLetter - 1];
     box.textContent = "";
@@ -128,7 +133,7 @@ function deleteLetter () {
     nextLetter -= 1;
 }
 
-function checkGuess () {
+function checkGuess() {
     let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining];
     let guessString = '';
     let rightGuess = Array.from(rightGuessString);
@@ -142,23 +147,23 @@ function checkGuess () {
         return;
     }
 
-    if(allWords){ //Dictionary is on
+    if (allWords) { //Dictionary is on
         if (!justWords.includes(guessString) && !WORDS.includes(guessString)) {
             toastr.error("Word not in list!");
             return;
         }
-    } else{   
-        if(!justWords.includes(guessString)){ //nothing is on
+    } else {
+        if (!justWords.includes(guessString)) { //nothing is on
             toastr.error("Word not in list!");
             return;
         }
     }
-    
+
     for (let i = 0; i < 5; i++) {
         let letterColor = '';
         let box = row.children[i];
         let letter = currentGuess[i];
-        
+
         let letterPosition = rightGuess.indexOf(currentGuess[i]);
         // is letter in the correct guess
         if (letterPosition === -1) {
@@ -179,7 +184,7 @@ function checkGuess () {
         }
 
         let delay = 250 * i;
-        setTimeout(()=> {
+        setTimeout(() => {
             //flip box
             animateCSS(box, 'flipInX');
             //shade box
@@ -189,12 +194,12 @@ function checkGuess () {
     }
 
     if (guessString === rightGuessString) {
-	
-	$('#settingsModal').modal('hide');
-        setTimeout(function(){
-	$('#endScreenModal').modal('show');
-	$('#playAgainButton').show();
-	},5000); 
+
+        $('#settingsModal').modal('hide');
+        setTimeout(function() {
+            $('#endScreenModal').modal('show');
+            $('#playAgainButton').show();
+        }, 1500);
         guessesRemaining = 0;
         return;
     } else {
@@ -203,9 +208,9 @@ function checkGuess () {
         nextLetter = 0;
 
         if (guessesRemaining === 0) {
-			$('#settingsModal').modal('hide');
+            $('#settingsModal').modal('hide');
             $('#lossScreenModal').modal('show');
-			$('#playAgainButton').show();
+            $('#playAgainButton').show();
         }
     }
 }
@@ -216,7 +221,7 @@ function shadeKeyBoard(letter, color) {
             let oldColor = elem.style.backgroundColor;
             if (oldColor === 'green') {
                 return;
-            } 
+            }
 
             if (oldColor === '#d9b502' && color !== 'green') {
                 return;
@@ -230,7 +235,7 @@ function shadeKeyBoard(letter, color) {
 
 document.getElementById("keyboard-cont").addEventListener("click", (e) => {
     const target = e.target;
-    
+
     if (!target.classList.contains("keyboard-button")) {
         return;
     }
@@ -238,13 +243,15 @@ document.getElementById("keyboard-cont").addEventListener("click", (e) => {
 
     if (key === "Del") {
         key = "Backspace";
-    } 
+    }
 
-    document.dispatchEvent(new KeyboardEvent("keyup", {'key': key}))
+    document.dispatchEvent(new KeyboardEvent("keyup", {
+        'key': key
+    }))
 })
 
 $('#hardModeButton').click(function() {
-    if(this.checked){
+    if (this.checked) {
         hardMode = true;
     } else {
         hardMode = false;
@@ -253,7 +260,7 @@ $('#hardModeButton').click(function() {
 });
 
 $('#dictionaryButton').click(function() {
-    if(this.checked){
+    if (this.checked) {
         allWords = true;
     } else {
         allWords = false;
@@ -262,36 +269,38 @@ $('#dictionaryButton').click(function() {
 
 $('#newWordButton').click(function() {
     $('#endScreenModal').modal('hide');
-	reset();
+    reset();
 });
 
 $('#tryAgainButton').click(function() {
-	$('#lossScreenModal').modal('hide');
-	reset();
+    $('#lossScreenModal').modal('hide');
+    reset();
 });
 
 $('#playAgainButton').click(function() {
-	$('#playAgainButton').hide();
-	reset();
+    $('#playAgainButton').hide();
+    reset();
 });
-	
+
 
 const animateCSS = (element, animation, prefix = 'animate__') =>
-  // We create a Promise and return it
-  new Promise((resolve, reject) => {
-    const animationName = `${prefix}${animation}`;
-    // const node = document.querySelector(element);
-    const node = element;
-    node.style.setProperty('--animate-duration', '0.3s');
-    
-    node.classList.add(`${prefix}animated`, animationName);
+    // We create a Promise and return it
+    new Promise((resolve, reject) => {
+        const animationName = `${prefix}${animation}`;
+        // const node = document.querySelector(element);
+        const node = element;
+        node.style.setProperty('--animate-duration', '0.3s');
 
-    // When the animation ends, we clean the classes and resolve the Promise
-    function handleAnimationEnd(event) {
-      event.stopPropagation();
-      node.classList.remove(`${prefix}animated`, animationName);
-      resolve('Animation ended');
-    }
+        node.classList.add(`${prefix}animated`, animationName);
 
-    node.addEventListener('animationend', handleAnimationEnd, {once: true});
-});
+        // When the animation ends, we clean the classes and resolve the Promise
+        function handleAnimationEnd(event) {
+            event.stopPropagation();
+            node.classList.remove(`${prefix}animated`, animationName);
+            resolve('Animation ended');
+        }
+
+        node.addEventListener('animationend', handleAnimationEnd, {
+            once: true
+        });
+    });
