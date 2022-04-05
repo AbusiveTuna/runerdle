@@ -29,7 +29,6 @@ function getWord() {
     }
     $("#wiki-link a").attr("href", rightGuessWiki);
     $("#wiki-link a").text("Your word was: " + rightGuessString);
-    console.log(rightGuessString);
 }
 
 function reset() {
