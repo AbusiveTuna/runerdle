@@ -173,8 +173,8 @@ body {
 }
 
 .help {
-    padding-right: 8px;
-    font-size: 24px;
+    font-size: 12px;
+    color: var(--color-tone-2);
     align-items: center;
 }
 
