@@ -19,6 +19,7 @@
     <h1> Old School Runescape Wordle </h1>
 
     <input type="image" src="images/Settings.png" class="btn btn-primary" alt="settings" data-toggle="modal" data-target="#settingsModal" />
+    <input type="image" src="images/questionMark.png" class="btn btn-help" alt="howtoplay" data-toggle="modal" data-target="#howToPlayModal" />
 
     <!-- Settings Modal -->
     <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true">
@@ -64,6 +65,36 @@
         </div>
     </div>
 
+        <!-- How To Play Modal -->
+    <div class="modal fade" id="howToPlayModal" tabindex="-1" role="dialog" aria-labelledby="howToPlayModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="howToPlayModalLabel">How To Play</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="text">
+                        <div class="title">Guess the OSRS related word in six tries.</div>
+                        <div class="title">Each guess must be a five-letter word. Hit enter to submit your guess.</div>
+                        <div class="title">After each guess, the color of the tiles will change to show how close</div>
+                        <div class="title">your guess was to the word.</div>
+                        
+                        <div class="title">Green means the letter is in the word and the correct spot.</div>
+                        <div class="title">Yellow means the letter is in the word but in the incorrect spot.</div>
+                        <div class="title">Gray means the letter is not in the word.</div>
+                        <img src="howtoplay.png" alt="Examples">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div id="game-board">
 
     </div>
