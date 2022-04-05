@@ -152,6 +152,13 @@ body {
     right: 10px;
 }
 
+.btn-help {
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
 .setting {
     display: flex;
     justify-content: space-between;
