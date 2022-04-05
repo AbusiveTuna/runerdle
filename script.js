@@ -149,7 +149,6 @@ function checkGuess () {
         }
     } else{   
         if(!justWords.includes(guessString)){ //nothing is on
-            console.log("No modes are on");
             toastr.error("Word not in list!");
             return;
         }
@@ -190,9 +189,12 @@ function checkGuess () {
     }
 
     if (guessString === rightGuessString) {
-		$('#settingsModal').modal('hide');
-        $('#endScreenModal').modal('show');
-		$('#playAgainButton').show();
+	
+	$('#settingsModal').modal('hide');
+        setTimeout(function(){
+	$('#endScreenModal').modal('show');
+	$('#playAgainButton').show();
+	},5000); 
         guessesRemaining = 0;
         return;
     } else {
