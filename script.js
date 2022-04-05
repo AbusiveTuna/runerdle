@@ -203,8 +203,10 @@ function checkGuess() {
 
         if (guessesRemaining === 0) {
             $('#settingsModal').modal('hide');
-            $('#lossScreenModal').modal('show');
-            $('#playAgainButton').show();
+            setTimeout(function() {
+                $('#lossScreenModal').modal('show');
+                $('#playAgainButton').show();
+            }, 1500);
         }
     }
 }
