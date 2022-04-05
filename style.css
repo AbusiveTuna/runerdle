@@ -170,18 +170,19 @@ body {
 .text {
     padding-right: 8px;
     font-size: 24px;
-    align-items: center;
 }
 
 .help {
     padding-right: 8px;
     font-size: 24px;
+    align-items: center;
 }
 
 .description {
     font-size: 12px;
     color: var(--color-tone-2);
 }
+
 
 /* The switch - the box around the slider */
 .switch {
