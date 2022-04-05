@@ -173,9 +173,9 @@ body {
 }
 
 .help {
-    font-size: 12px;
+    font-size: 18px;
     color: var(--color-tone-2);
-    text-align: center;
+    text-align: left;
 }
 
 .description {
