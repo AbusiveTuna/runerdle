@@ -84,7 +84,7 @@ document.addEventListener("keyup", (e) => {
 
 })
 
-function inputLetter(pressedKey.toLowerCase()){
+function inputLetter(pressedKey){
     console.log(pressedKey);
     
     if (pressedKey === "Backspace" && nextLetter !== 0) {
@@ -101,8 +101,8 @@ function inputLetter(pressedKey.toLowerCase()){
         checkGuess();
         return;
     }
-    console.log(pressedKey.charCodeAt());
-    if (pressedKey.charCodeAt() >= 97 && pressedKey.charCodeAt() <= 122) {
+    console.log(pressedKey.toLowerCase().charCodeAt());
+    if (pressedKey.toLowerCase().charCodeAt() >= 97 && pressedKey.toLowerCase().charCodeAt() <= 122) {
         insertLetter(pressedKey);
     }
 
