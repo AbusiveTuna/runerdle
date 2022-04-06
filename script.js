@@ -279,22 +279,18 @@ $('#playAgainButton').click(function() {
 
 $('#keyboard-cont').click(function(){
     console.log("Test3");
+    console.log($('#keyboard-cont'));
+    var test = $('#keyboard-cont').text();
+    console.log(test);
 });
                           
-$('#first-row').click(function(){
-    console.log("Test2");
-});
                       
 $('.keyboard-button').click(function(){
     console.log("Test22");
 });
 
 $('#keyboard-button').click(function() {
-   
-    console.log("Test");
-    var test = $('#keyboard-button').text();
-    console.log(test);
-    
+
     if (guessesRemaining === 0) {
         return;
     }
