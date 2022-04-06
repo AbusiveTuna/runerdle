@@ -277,6 +277,13 @@ $('#playAgainButton').click(function() {
     reset();
 });
 
+$('#keyboard-button').click(function() {
+   
+    console.log("Test");
+    var test = $('#keyboard-button').text();
+    console.log(test);
+    
+});
 
 const animateCSS = (element, animation, prefix = 'animate__') =>
     // We create a Promise and return it
