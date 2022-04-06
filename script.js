@@ -76,6 +76,7 @@ initBoard();
 
 document.addEventListener("keyup", (e) => {
 
+    console.log("KEYUP");
     if (guessesRemaining === 0) {
         return;
     }
@@ -263,6 +264,8 @@ $('#playAgainButton').click(function() {
 });
          
 $('.keyboard-button').click(function(){
+    
+    console.log("BUTTON");
     
     if (guessesRemaining === 0) {
         return;
