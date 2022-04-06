@@ -279,15 +279,15 @@ $('#playAgainButton').click(function() {
 
 $('#keyboard-cont').click(function(){
     console.log("Test3");
-}
+});
                           
 $('#first-row').click(function(){
     console.log("Test2");
-}
+});
                       
 $('.#keyboard-button').click(function(){
     console.log("Test22");
-}
+});
 
 $('#keyboard-button').click(function() {
    
