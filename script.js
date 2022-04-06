@@ -277,20 +277,15 @@ $('#playAgainButton').click(function() {
     reset();
 });
 
-$('#keyboard-cont').click(function(){
-    console.log("Test3");
-    console.log($('#keyboard-cont'));
-    var test = $('#keyboard-cont').text();
-    console.log(test);
-});
+// $('#keyboard-cont').click(function(){
+//     console.log($('#keyboard-cont'));
+// });
                           
                       
 $('.keyboard-button').click(function(){
     console.log("Test22");
-});
-
-$('#keyboard-button').click(function() {
-
+    var test = $('.keyboard-button').text();
+    console.log(test);
     if (guessesRemaining === 0) {
         return;
     }
