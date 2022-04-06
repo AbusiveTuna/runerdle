@@ -263,17 +263,12 @@ $('#playAgainButton').click(function() {
 });
          
 $('.keyboard-button').click(function(){
-    console.log($(this));
-
-    var test = $(this).text();
-
-    console.log(test);
     
     if (guessesRemaining === 0) {
         return;
     }
     
-    inputLetter(String(test));
+    inputLetter(String($(this).text()));
     
 });
 
