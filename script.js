@@ -223,8 +223,8 @@ function checkGuess() {
 function shadeKeyBoard(letter, color) {
     for (const elem of document.getElementsByClassName("keyboard-button")) {
         if (elem.textContent === letter) {
-            console.log(oldColor);
             let oldColor = elem.style.backgroundColor;
+                        console.log(oldColor);
             if (oldColor === 'green') {
                 return;
             }
