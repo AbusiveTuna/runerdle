@@ -12,7 +12,6 @@ let rightGuessString = "";
 let rightGuessWiki = "";
 let rand = 0;
 let justWords;
-let old_html = $("#keyboard-cont").html();
 
 function getWord() {
 
@@ -36,7 +35,6 @@ function reset() {
     currentGuess = [];
     nextLetter = 0;
     $("#game-board").html(null);
-    //$("#keyboard-cont").html(old_html);
     for (const elem of document.getElementsByClassName("keyboard-button")) {
         elem.style.backgroundColor = "";
     }
