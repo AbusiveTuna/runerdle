@@ -285,7 +285,7 @@ $('#first-row').click(function(){
     console.log("Test2");
 });
                       
-$('.#keyboard-button').click(function(){
+$('.keyboard-button').click(function(){
     console.log("Test22");
 });
 
