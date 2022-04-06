@@ -80,8 +80,13 @@ document.addEventListener("keyup", (e) => {
         return;
     }
 
-    let pressedKey = String(e.key)
-    if (pressedKey === "Backspace" && nextLetter !== 0) {
+    inputLetter(String(e.key));
+
+})
+
+function inputLetter(pressedKey){
+    
+        if (pressedKey === "Backspace" && nextLetter !== 0) {
         deleteLetter();
         return;
     }
@@ -100,7 +105,7 @@ document.addEventListener("keyup", (e) => {
         insertLetter(pressedKey);
     }
 
-})
+}
 
 function insertLetter(pressedKey) {
     if (nextLetter === 5) {
@@ -228,22 +233,22 @@ function shadeKeyBoard(letter, color) {
     }
 }
 
-document.getElementById("keyboard-cont").addEventListener("click", (e) => {
-    const target = e.target;
+// document.getElementById("keyboard-cont").addEventListener("click", (e) => {
+//     const target = e.target;
 
-    if (!target.classList.contains("keyboard-button")) {
-        return;
-    }
-    let key = target.textContent;
+//     if (!target.classList.contains("keyboard-button")) {
+//         return;
+//     }
+//     let key = target.textContent;
 
-    if (key === "Del") {
-        key = "Backspace";
-    }
+//     if (key === "Del") {
+//         key = "Backspace";
+//     }
 
-    document.dispatchEvent(new KeyboardEvent("keyup", {
-        'key': key
-    }))
-})
+//     document.dispatchEvent(new KeyboardEvent("keyup", {
+//         'key': key
+//     }))
+// })
 
 $('#hardModeButton').click(function() {
     if (this.checked) {
@@ -276,40 +281,19 @@ $('#playAgainButton').click(function() {
     $('#playAgainButton').hide();
     reset();
 });
-
-// $('#keyboard-cont').click(function(){
-//     console.log($('#keyboard-cont'));
-// });
-                          
-                      
+         
 $('.keyboard-button').click(function(){
     console.log($(this));
 
     var test = $(this).text();
 
+    console.log(test);
+    
     if (guessesRemaining === 0) {
         return;
     }
-
-    let pressedKey = String(test);
-    if (pressedKey === "Backspace" && nextLetter !== 0) {
-        deleteLetter();
-        return;
-    }
-
-    if (pressedKey === "Backspace" && nextLetter !== 0) {
-        deleteLetter();
-        return;
-    }
-
-    if (pressedKey === "Enter") {
-        checkGuess();
-        return;
-    }
-
-    if (event.keyCode >= 65 && event.keyCode <= 90) {
-        insertLetter(pressedKey);
-    }
+    
+    inputLetter(String(test));
     
 });
 
