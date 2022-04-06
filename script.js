@@ -277,6 +277,14 @@ $('#playAgainButton').click(function() {
     reset();
 });
 
+$('#keyboard-cont').click(function(){
+    console.log("Test3");
+}
+                          
+$('#first-row').click(function(){
+    console.log("Test2");
+}
+
 $('#keyboard-button').click(function() {
    
     console.log("Test");
