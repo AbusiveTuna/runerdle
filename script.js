@@ -87,7 +87,7 @@ document.addEventListener("keyup", (e) => {
 function inputLetter(pressedKey){
     console.log(pressedKey);
     
-        if (pressedKey === "Backspace" && nextLetter !== 0) {
+    if (pressedKey === "Backspace" && nextLetter !== 0) {
         deleteLetter();
         return;
     }
@@ -101,8 +101,10 @@ function inputLetter(pressedKey){
         checkGuess();
         return;
     }
-
-    if (event.keyCode >= 65 && event.keyCode <= 90) {
+    console.log(event);
+    console.log(event.keycode);
+    
+    if (pressedKey >= 65 && pressedKey <= 90) {
         insertLetter(pressedKey);
     }
 
@@ -233,23 +235,6 @@ function shadeKeyBoard(letter, color) {
         }
     }
 }
-
-// document.getElementById("keyboard-cont").addEventListener("click", (e) => {
-//     const target = e.target;
-
-//     if (!target.classList.contains("keyboard-button")) {
-//         return;
-//     }
-//     let key = target.textContent;
-
-//     if (key === "Del") {
-//         key = "Backspace";
-//     }
-
-//     document.dispatchEvent(new KeyboardEvent("keyup", {
-//         'key': key
-//     }))
-// })
 
 $('#hardModeButton').click(function() {
     if (this.checked) {
