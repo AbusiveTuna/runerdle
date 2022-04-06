@@ -36,7 +36,10 @@ function reset() {
     currentGuess = [];
     nextLetter = 0;
     $("#game-board").html(null);
-    $("#keyboard-cont").html(old_html);
+    //$("#keyboard-cont").html(old_html);
+    for (const elem of document.getElementsByClassName("keyboard-button")) {
+        elem.style.backgroundColor = "";
+    }
     initBoard();
 }
 
@@ -216,7 +219,6 @@ function shadeKeyBoard(letter, color) {
     for (const elem of document.getElementsByClassName("keyboard-button")) {
         if (elem.textContent === letter) {
             let oldColor = elem.style.backgroundColor;
-                        console.log(oldColor);
             if (oldColor === 'green') {
                 return;
             }
