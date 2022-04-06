@@ -90,13 +90,11 @@ function inputLetter(pressedKey){
 
     if ((pressedKey === "Backspace" || pressedKey === "Del") && nextLetter !== 0) {
         deleteLetter();
-        pressedKey = "";
         return;
     }
 
     if (pressedKey === "Enter") {
         checkGuess();
-        pressedKey = "";
         return;
     }
 
@@ -104,7 +102,6 @@ function inputLetter(pressedKey){
     
     if (pressedKey.length === 1 && pressedKey.charCodeAt() >= 97 && pressedKey.charCodeAt() <= 122) {
         insertLetter(pressedKey);
-        pressedKey = "";
     }
 
 }
