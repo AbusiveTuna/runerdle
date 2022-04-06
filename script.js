@@ -85,6 +85,7 @@ document.addEventListener("keyup", (e) => {
 })
 
 function inputLetter(pressedKey){
+    console.log(pressedKey);
     
         if (pressedKey === "Backspace" && nextLetter !== 0) {
         deleteLetter();
