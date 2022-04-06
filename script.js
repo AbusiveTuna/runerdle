@@ -101,10 +101,9 @@ function inputLetter(pressedKey){
         checkGuess();
         return;
     }
-    console.log(event);
-    console.log(event.keycode);
+    console.log(pressedKey.charCodeAt());
     
-    if (pressedKey >= 65 && pressedKey <= 90) {
+    if (pressedKey.charCodeAt() >= 65 && pressedKey.charCodeAt() <= 90) {
         insertLetter(pressedKey);
     }
 
