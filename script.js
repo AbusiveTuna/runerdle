@@ -96,8 +96,10 @@ function inputLetter(pressedKey){
         checkGuess();
         return;
     }
-    console.log(pressedKey.toLowerCase().charCodeAt());
-    if (pressedKey.toLowerCase().charCodeAt() >= 97 && pressedKey.toLowerCase().charCodeAt() <= 122) {
+
+    pressedKey = pressedKey.toLowerCase();
+    
+    if (pressedKey.charCodeAt() >= 97 && pressedKey.charCodeAt() <= 122) {
         insertLetter(pressedKey);
     }
 
@@ -107,7 +109,6 @@ function insertLetter(pressedKey) {
     if (nextLetter === 5) {
         return;
     }
-    pressedKey = pressedKey.toLowerCase();
 
     let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining];
     let box = row.children[nextLetter];
