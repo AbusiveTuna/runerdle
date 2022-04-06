@@ -283,6 +283,7 @@ $('#playAgainButton').click(function() {
                           
                       
 $('.keyboard-button').click(function(){
+    console.log($(this));
     console.log("Test22");
     var test = $('.keyboard-button').text();
     console.log($('.keyboard-button'));
