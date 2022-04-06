@@ -76,7 +76,6 @@ initBoard();
 
 document.addEventListener("keyup", (e) => {
 
-    console.log("KEYUP");
     if (guessesRemaining === 0) {
         return;
     }
@@ -275,11 +274,11 @@ $('.keyboard-button').click(function(){
     
 });
 
-document.querySelectorAll("button").forEach( function(item) {
-    item.addEventListener('focus', function() {
-        this.blur();
-    })
-})
+// document.querySelectorAll("button").forEach( function(item) {
+//     item.addEventListener('focus', function() {
+//         this.blur();
+//     })
+// })
 
 const animateCSS = (element, animation, prefix = 'animate__') =>
     // We create a Promise and return it
