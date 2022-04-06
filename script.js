@@ -99,7 +99,7 @@ function inputLetter(pressedKey){
 
     pressedKey = pressedKey.toLowerCase();
     
-    if (pressedKey.charCodeAt() >= 97 && pressedKey.charCodeAt() <= 122) {
+    if (pressedKey.length === 1 && pressedKey.charCodeAt() >= 97 && pressedKey.charCodeAt() <= 122) {
         insertLetter(pressedKey);
     }
 
