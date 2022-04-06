@@ -36,15 +36,7 @@ function reset() {
     currentGuess = [];
     nextLetter = 0;
     $("#game-board").html(null);
-    //$("#keyboard-cont").html(old_html);
-    
-    for (const elem of document.getElementsByClassName("keyboard-button")) {
-        if (elem.textContent === letter) {
-            elem.style.backgroundColor = grey;
-            break;
-        }
-    }
-
+    $("#keyboard-cont").html(old_html);
     initBoard();
 }
 
@@ -272,8 +264,6 @@ $('#playAgainButton').click(function() {
 });
          
 $('.keyboard-button').click(function(){
-    
-    console.log("BUTTON");
     
     if (guessesRemaining === 0) {
         return;
