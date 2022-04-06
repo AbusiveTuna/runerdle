@@ -284,6 +284,10 @@ $('#keyboard-cont').click(function(){
 $('#first-row').click(function(){
     console.log("Test2");
 }
+                      
+$('.#keyboard-button').click(function(){
+    console.log("Test22");
+}
 
 $('#keyboard-button').click(function() {
    
