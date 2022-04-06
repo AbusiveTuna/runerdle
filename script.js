@@ -275,6 +275,12 @@ $('.keyboard-button').click(function(){
     
 });
 
+document.querySelectorAll("button").forEach( function(item) {
+    item.addEventListener('focus', function() {
+        this.blur();
+    })
+})
+
 const animateCSS = (element, animation, prefix = 'animate__') =>
     // We create a Promise and return it
     new Promise((resolve, reject) => {
