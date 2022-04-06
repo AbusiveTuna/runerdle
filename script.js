@@ -283,6 +283,30 @@ $('#keyboard-button').click(function() {
     var test = $('#keyboard-button').text();
     console.log(test);
     
+    if (guessesRemaining === 0) {
+        return;
+    }
+
+    let pressedKey = String(test);
+    if (pressedKey === "Backspace" && nextLetter !== 0) {
+        deleteLetter();
+        return;
+    }
+
+    if (pressedKey === "Backspace" && nextLetter !== 0) {
+        deleteLetter();
+        return;
+    }
+
+    if (pressedKey === "Enter") {
+        checkGuess();
+        return;
+    }
+
+    if (event.keyCode >= 65 && event.keyCode <= 90) {
+        insertLetter(pressedKey);
+    }
+    
 });
 
 const animateCSS = (element, animation, prefix = 'animate__') =>
