@@ -36,7 +36,15 @@ function reset() {
     currentGuess = [];
     nextLetter = 0;
     $("#game-board").html(null);
-    $("#keyboard-cont").html(old_html);
+    //$("#keyboard-cont").html(old_html);
+    
+    for (const elem of document.getElementsByClassName("keyboard-button")) {
+        if (elem.textContent === letter) {
+            elem.style.backgroundColor = grey;
+            break;
+        }
+    }
+
     initBoard();
 }
 
@@ -215,6 +223,7 @@ function checkGuess() {
 function shadeKeyBoard(letter, color) {
     for (const elem of document.getElementsByClassName("keyboard-button")) {
         if (elem.textContent === letter) {
+            console.log(oldColor);
             let oldColor = elem.style.backgroundColor;
             if (oldColor === 'green') {
                 return;
@@ -274,11 +283,11 @@ $('.keyboard-button').click(function(){
     
 });
 
-// document.querySelectorAll("button").forEach( function(item) {
-//     item.addEventListener('focus', function() {
-//         this.blur();
-//     })
-// })
+document.querySelectorAll("button").forEach( function(item) {
+    item.addEventListener('focus', function() {
+        this.blur();
+    })
+})
 
 const animateCSS = (element, animation, prefix = 'animate__') =>
     // We create a Promise and return it
