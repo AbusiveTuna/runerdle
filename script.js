@@ -285,6 +285,7 @@ $('#playAgainButton').click(function() {
 $('.keyboard-button').click(function(){
     console.log("Test22");
     var test = $('.keyboard-button').text();
+    console.log($('.keyboard-button'));
     console.log(test);
     if (guessesRemaining === 0) {
         return;
