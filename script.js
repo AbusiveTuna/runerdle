@@ -26,8 +26,7 @@ function getWord() {
         rightGuessWiki = GUESSES[rand][1];
         justWords = toOneD(GUESSES);
     }
-    $("#wiki-link a").attr("href", rightGuessWiki);
-    $("#wiki-link a").text("Your word was: " + rightGuessString);
+
 }
 
 function reset() {
@@ -189,6 +188,9 @@ function checkGuess() {
     }
 
     if (guessString === rightGuessString) {
+	    
+	$("#wiki-link a").attr("href", rightGuessWiki);
+   	$("#wiki-link a").text("Your word was: " + rightGuessString);
 
         $('#settingsModal').modal('hide');
         setTimeout(function() {
@@ -198,6 +200,8 @@ function checkGuess() {
         guessesRemaining = 0;
         return;
     } else {
+	$("#wiki-link a").attr("href", rightGuessWiki);
+   	$("#wiki-link a").text("Your word was: " + rightGuessString);
         guessesRemaining -= 1;
         currentGuess = [];
         nextLetter = 0;
