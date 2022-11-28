@@ -54,8 +54,6 @@ function toOneD(twoD) {
 
 function initBoard() {
     $('#playAgainButton').hide();
-    getWord();
-
 
     let board = document.getElementById("game-board");
 
@@ -71,6 +69,7 @@ function initBoard() {
 
         board.appendChild(row);
     }
+	getWord();
 }
 
 initBoard();
